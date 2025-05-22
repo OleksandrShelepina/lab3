@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
+    <meta charset="UTF-8">
     <title>Головна сторінка</title>
 </head>
 <body>
-    <h1>Лабораторна робота №4</h1>
+    <h1>Привіт! Це моя перша сторінка на Django!</h1>
+    <p>Це сторінка, яка рендериться через шаблон.</p>
+
+    <h2>Перейти до інших сторінок:</h2>
     <ul>
-        <li><a href="{% url 'view1' %}">Сторінка 1</a></li>
-        <li><a href="{% url 'view2' %}">Сторінка 2</a></li>
-        <li><a href="{% url 'view3' %}">Сторінка 3</a></li>
-        <li><a href="{% url 'view4' %}">Сторінка 4</a></li>
-        <li><a href="{% url 'view5' %}">Сторінка 5</a></li>
+        <li><a href="{% url 'view1' %}">Вьюшка 1</a></li>
+        <li><a href="{% url 'view2' %}">Вьюшка 2</a></li>
+        <li><a href="{% url 'view3' %}">Вьюшка 3</a></li>
+        <li><a href="{% url 'view4' %}">Вьюшка 4</a></li>
+        <li><a href="{% url 'view5' %}">Вьюшка 5</a></li>
     </ul>
 </body>
 </html>
