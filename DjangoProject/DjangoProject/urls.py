@@ -11,3 +11,4 @@ urlpatterns = [
     path('view4/', views.view4, name='view4'),
     path('view5/', views.view5, name='view5'),
 ]
+

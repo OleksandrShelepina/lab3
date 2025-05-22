@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Магазин мишок</title>
+</head>
+<body>
+    <h1>Список ігрових мишок</h1>
+    <ul>
+        {% for mouse in mice %}
+        <li>
+            <strong>{{ mouse.brand.name }} {{ mouse.model_name }}</strong><br>
+            DPI: {{ mouse.dpi }}<br>
+            Сенсор: {{ mouse.sensor_type }}<br>
+            Ціна: {{ mouse.price }} грн<br>
+            Бездротова: {{ mouse.is_wireless|yesno:"Так,Ні" }}
+        </li>
+        {% empty %}
+        <li>Немає мишок</li>
+        {% endfor %}
+    </ul>
+    <a href="/">На головну</a>
+</body>
+</html>

@@ -1,20 +1,47 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>Головна сторінка</title>
-</head>
-<body>
-    <h1>Привіт! Це моя перша сторінка на Django!</h1>
-    <p>Це сторінка, яка рендериться через шаблон.</p>
+<h1>Привіт! Це моя перша сторінка на Django!</h1>
+<p>Це сторінка, яка рендериться через шаблон.</p>
 
-    <h2>Перейти до інших сторінок:</h2>
-    <ul>
-        <li><a href="{% url 'view1' %}">Вьюшка 1</a></li>
-        <li><a href="{% url 'view2' %}">Вьюшка 2</a></li>
-        <li><a href="{% url 'view3' %}">Вьюшка 3</a></li>
-        <li><a href="{% url 'view4' %}">Вьюшка 4</a></li>
-        <li><a href="{% url 'view5' %}">Вьюшка 5</a></li>
-    </ul>
-</body>
-</html>
+<h2>Наші ігрові мишки:</h2>
+
+<table border="1">
+    <tr>
+        <th>Бренд</th>
+        <th>Модель</th>
+        <th>Тип сенсора</th>
+        <th>DPI</th>
+        <th>Вага (г)</th>
+        <th>Колір</th>
+        <th>Безпровідна</th>
+        <th>Ціна (грн)</th>
+        <th>В наявності</th>
+    </tr>
+    {% if mice %}
+        {% for mouse in mice %}
+        <tr>
+            <td>{{ mouse.brand.name }}</td>
+            <td>{{ mouse.model_name }}</td>
+            <td>{{ mouse.sensor_type }}</td>
+            <td>{{ mouse.dpi }}</td>
+            <td>{{ mouse.weight }}</td>
+            <td>{{ mouse.color }}</td>
+            <td>{% if mouse.is_wireless %}Так{% else %}Ні{% endif %}</td>
+            <td>{{ mouse.price }}</td>
+            <td>{{ mouse.stock_quantity }}</td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="9">Мишок поки немає.</td>
+        </tr>
+    {% endif %}
+</table>
+
+<p>Перейти до інших сторінок:</p>
+<ul>
+    <li><a href="{% url 'view1' %}">Вьюшка 1</a></li>
+    <li><a href="{% url 'view2' %}">Вьюшка 2</a></li>
+    <li><a href="{% url 'view3' %}">Вьюшка 3</a></li>
+    <li><a href="{% url 'view4' %}">Вьюшка 4</a></li>
+    <li><a href="{% url 'view5' %}">Вьюшка 5</a></li>
+</ul>
+
