@@ -1,9 +1,23 @@
+# Python
 *.pyc
 __pycache__/
+
+# Logs
 *.log
-*.sqlite3
+
+# Environment
 *.env
-/static/
-.media/
-.idea/
 .venv/
+
+# Django
+*.sqlite3
+/media/
+staticfiles/
+static/
+
+# IDE
+.idea/
+
+# System
+.DS_Store
+Thumbs.db
